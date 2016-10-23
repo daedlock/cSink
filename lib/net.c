@@ -1,17 +1,16 @@
 #include "net.h"
 
 
+
 /**
  * Used by CURL_WRITEFUNCTION to process response
  */
 size_t processResponse(void * ptr, size_t size, size_t nmemb, void * stream) {
     printf("--[ processResponse called ]--\n");
     printf("[*] ptr:\t\t%p\n", ptr);
-    printf("[*] length as string:\t%u\n", strlen(ptr));
     printf("[*] size:\t\t%u\n", size);
     printf("[*] nmemb:\t\t%u\n", nmemb);
-    printf("[*] stream:\t\t%s\n",stream );
-
+    cc_fprintf(CC_FG_GREEN, stdout, "--[ Completed Request ]--\n");
     char **response_ptr =  (char**)stream;
     *response_ptr = strndup(ptr, (size_t)(size *nmemb));
 }
