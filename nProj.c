@@ -1,5 +1,6 @@
-#include "lib/net.c"
-#include "lib/draw.c"
+#include "lib/net.h"
+#include "lib/draw.h"
+#include <stdio.h>
 
 int main(){
     printBanner();

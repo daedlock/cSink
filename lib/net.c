@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <string.h>
-#include <curl/curl.h>
+#include "net.h"
 
 
 /**
@@ -8,11 +6,11 @@
  */
 size_t processResponse(void * ptr, size_t size, size_t nmemb, void * stream) {
     printf("--[ processResponse called ]--\n");
-    printf("[*] ptr: %p\n", ptr);
-    printf("[*] length as string: %u\n", strlen(ptr));
-    printf("[*] size: %u\n", size);
-    printf("[*] nmemb: %u\n", nmemb);
-    printf("[*] stream: %s\n",stream );
+    printf("[*] ptr:\t\t%p\n", ptr);
+    printf("[*] length as string:\t%u\n", strlen(ptr));
+    printf("[*] size:\t\t%u\n", size);
+    printf("[*] nmemb:\t\t%u\n", nmemb);
+    printf("[*] stream:\t\t%s\n",stream );
 
     char **response_ptr =  (char**)stream;
     *response_ptr = strndup(ptr, (size_t)(size *nmemb));
