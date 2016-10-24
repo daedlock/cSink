@@ -5,10 +5,10 @@
 
 /**
  * Used by CURL_WRITEFUNCTION to process response
+ * copy http response body (ptr) to output
  */
-size_t processResponse(void * ptr, size_t size, size_t nmemb, char *output) {
-    char * resPtr = (char *)ptr;
-    strcpy(output, resPtr);
+size_t processResponse(char * ptr, size_t size, size_t nmemb, char *output) {
+    strcpy(output, ptr);
 }
 
 /**
