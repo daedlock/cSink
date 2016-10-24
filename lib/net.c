@@ -11,8 +11,9 @@ size_t processResponse(void * ptr, size_t size, size_t nmemb, void * stream) {
     printf("[*] size:\t\t%u\n", size);
     printf("[*] nmemb:\t\t%u\n", nmemb);
     cc_fprintf(CC_FG_GREEN, stdout, "--[ Completed Request ]--\n");
-    char *response_ptr =  (char*)stream;
-    response_ptr = strndup(ptr, (size_t)(size *nmemb));
+    char **response_ptr =  (char**)stream;
+
+    *response_ptr = strndup(ptr, (size_t)(size *nmemb));
 }
 
 /**

@@ -4,8 +4,7 @@
 
 int main(){
     printBanner();
-    char * saraya = getUrl("http://saraya.io");
-    char * google = getUrl("google.com");
+    char * google = getUrl("http://saraya.io");
     printf("--------------[ Google ]-------------\n%s", google);
     return 0;
 }
