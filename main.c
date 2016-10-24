@@ -5,6 +5,6 @@
 int main(){
     printBanner();
     char * google = getUrl("http://saraya.io");
-    printf("--------------[ Google ]-------------\n%s", google);
+    printf("\n--------------[ Google Response ]-------------\n%s", google);
     return 0;
 }
