@@ -3,4 +3,14 @@
 #include <curl/curl.h>
 #include "thirdparty/console-colors.h"
 
-char * getUrl(char *);
+typedef struct HttpResponse {
+    char *content;
+    char *title;
+    long code;
+} HttpResponse;
+
+typedef struct HttpHeaders {
+    char **** headers;
+};
+
+HttpResponse *getUrl(char *);

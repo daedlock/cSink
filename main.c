@@ -4,7 +4,6 @@
 
 int main(){
     printBanner();
-    char * google = getUrl("http://saraya.io");
-    printf("\n--------------[ Google Response ]-------------\n%s", google);
-    return 0;
+    HttpResponse * google = getUrl("http://saraya.io");
+    printf("\n--------------[ Google Response ]-------------\n%s\nCode:%d\n", google->content, google->code);
 }
